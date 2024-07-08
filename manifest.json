@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Ban Blur",
+    "version": "0.1.0",
+    "description": "Remove comment blur from ArcaLive",
+    "permissions": ["activeTab"],
+    "action": {
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://arca.live/*"],
+        "js": ["script.js"],
+        "run_at": "document_idle"
+      }
+    ]
+  }
+  
