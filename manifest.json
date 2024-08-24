@@ -7,7 +7,7 @@
     {
       "matches": ["https://arca.live/*"],
       "js": ["script.js"],
-      "run_at": "document_idle"
+      "run_at": "document_start"
     }
   ]
 }
