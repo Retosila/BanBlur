@@ -1,25 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
-  console.log("BanBlur Activated!")
+let debounceTimer;
 
-  // Remove blur from comments
-  const pres = document.querySelectorAll('pre.blur');
-  pres.forEach(pre => {
-    pre.classList.remove('blur');
+function removeBlur() {
+  const blurredElements = document.querySelectorAll(".blur");
+  blurredElements.forEach((element) => {
+    element.classList.remove("blur");
   });
-  console.log(`Unblurred Comments: ${pres.length}`)
+  console.info(
+    `${blurredElements.length}개의 블러된 컨텐츠를 정상화하였습니다!`
+  );
+}
 
-  // Remove blur from emoticons
-  const imgs = document.querySelectorAll('img.blur');
-  imgs.forEach(img => {
-    img.classList.remove('blur');
-  });
-  console.log(`Unblurred Emoticons: ${imgs.length}`)
+document.addEventListener("DOMContentLoaded", () => {
+  console.info("BanBlur가 활성화되었습니다!");
 
-  // Remove blur from video emoticons
-  const videos = document.querySelectorAll('video.blur');
-  videos.forEach(video => {
-    video.classList.remove('blur');
+  removeBlur();
+
+  const observer = new MutationObserver(() => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(removeBlur, 3_000);
   });
-  console.log(`Unblurred Video Emoticons: ${videos.length}`)
+
+  observer.observe(document.body, { childList: true, subtree: true });
 });
-  
