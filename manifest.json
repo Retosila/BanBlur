@@ -3,7 +3,6 @@
   "name": "Ban Blur",
   "version": "0.1.1",
   "description": "아카라이브에서 로그인 없이 블러된 컨텐츠 확인 가능하도록 해주는 확장",
-  "permissions": ["activeTab"],
   "content_scripts": [
     {
       "matches": ["https://arca.live/*"],
