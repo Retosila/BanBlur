@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Ban Blur",
   "version": "0.1.2",
-  "description": "아카라이브에서 로그인 없이 블러된 컨텐츠 확인 가능하도록 해주는 확장",
+  "description": "아카라이브에서 로그인 없이 블러된 컨텐츠들을 확인 가능하도록 해주는 확장 프로그램",
   "content_scripts": [
     {
       "matches": ["https://arca.live/*"],
